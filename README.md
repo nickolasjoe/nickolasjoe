@@ -1,6 +1,6 @@
 # Nickolas Joe
 
-Creator of @TigerCodes-io.
+Creator of @tigercodes-io.
 
 [![Twitter Badge](https://img.shields.io/badge/-@nickolasjoe_-00875f?style=flat-square&labelColor=00875f&logo=twitter&logoColor=white&link=https://twitter.com/nickolasjoe_)](https://twitter.com/nickolasjoe_)
 [![Linkedin Badge](https://img.shields.io/badge/-Nickolas%20Joe-00875f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/nickolasjoe/)](https://www.linkedin.com/in/nickolasjoe/)
