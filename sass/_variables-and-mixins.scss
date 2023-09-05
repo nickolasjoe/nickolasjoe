@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Drescher Grotesk BT Bold";
+  src: url("./assets/fonts/drescher-grotesk-bt-bold.ttf") format("truetype");
+}
+
+:root {
+  --white-1: #ffffff;
+  --white-2: #f7f7f7;
+  --black-1: #23272f;
+  --black-2: #000000;
+  --blue-1: #99ccda;
+  --blue-2: #087ea4;
+  --purple: #ecdcf2;
+  --font-title: "Drescher Grotesk BT Bold", sans-serif;
+  --font-text: "Inter", sans-serif;
+}
+
+@mixin m($size) {
+  $finalSize: $size + px;
+  @media only screen and (max-width: $finalSize) {
+    @content;
+  }
+}

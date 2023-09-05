@@ -1,0 +1,83 @@
+.hero {
+  min-height: 100vh;
+  background-color: var(--blue-2);
+  display: grid;
+  place-items: center;
+  color: var(--white-1);
+  position: relative;
+
+  .container {
+    padding-inline: 16px;
+    position: relative;
+  }
+
+  .greetings {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--blue-1);
+    text-transform: uppercase;
+    padding-left: 14px;
+    @include m(1400) {
+      font-size: 24px;
+      padding-bottom: 4px;
+      padding-left: 6px;
+    }
+    @include m(720) {
+      font-size: 18px;
+      padding-bottom: 2px;
+      padding-left: 4px;
+    }
+  }
+
+  .emoji {
+    display: inline-block;
+    animation: wave 2.5s infinite;
+    transform-origin: 70% 70%;
+  }
+
+  .headline {
+    font-family: var(--font-title);
+    font-size: 256px;
+    line-height: 0.74;
+    text-transform: uppercase;
+    max-width: 1350px;
+    @include m(1400) {
+      font-size: 128px;
+      line-height: 0.8;
+    }
+    @include m(720) {
+      font-size: 96px;
+    }
+    @include m(550) {
+      font-size: 64px;
+    }
+  }
+
+  .about-me {
+    font-size: 24px;
+    text-align: right;
+    margin-top: 16px;
+    @include m(1400) {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    @include m(720) {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    @include m(550) {
+      line-height: 1.2;
+      max-width: 256px;
+      margin-left: auto;
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 16px;
+  animation: bounce 1.75s infinite;
+  @include m(550) {
+    bottom: 96px;
+  }
+}

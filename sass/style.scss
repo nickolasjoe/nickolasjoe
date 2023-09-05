@@ -1,6 +1,11 @@
 // General
 @import "reset";
 @import "variables-and-mixins";
+@import "global";
 
 // Website
-@import "home";
+@import "hero";
+@import "animations";
+@import "my-personal-links";
+@import "portfolio";
+@import "contact";

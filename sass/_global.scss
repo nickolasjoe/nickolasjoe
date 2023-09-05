@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body,
+button {
+  font: 400 16px/1 var(--font-text);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 48px;
+  color: var(--black-1);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &.start {
+    background-image: url("./assets/illustrations/curves1.svg");
+  }
+  &.end {
+    background-image: url("./assets/illustrations/curves2.svg");
+    transform: rotate(180deg);
+  }
+}

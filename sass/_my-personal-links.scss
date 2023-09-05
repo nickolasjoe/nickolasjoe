@@ -1,0 +1,48 @@
+.my-personal-links {
+  display: flex;
+  gap: 48px;
+  position: absolute;
+  top: 92px;
+  right: 198px;
+  @include m(1400) {
+    gap: 20px;
+    top: 74px;
+    right: 106px;
+  }
+  @include m(720) {
+    gap: 16px;
+    top: 48px;
+    right: 45px;
+  }
+  @include m(550) {
+    gap: 12px;
+    right: 55px;
+  }
+
+  .icon {
+    @include m(1400) {
+      width: 48px;
+      height: 48px;
+    }
+    @include m(550) {
+      width: 24px;
+      height: 24px;
+    }
+    path {
+      transition: 0.3s;
+    }
+  }
+
+  .link {
+    display: block;
+    transition: 0.3s ease-in;
+    transition-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+
+    &:hover {
+      transform: translateY(-12px);
+      path {
+        fill: var(--white-1);
+      }
+    }
+  }
+}
