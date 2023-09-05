@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  background-color: var(--white-2);
   overflow-x: hidden;
 }
 
@@ -34,9 +35,10 @@ svg {
   background-size: cover;
   &.start {
     background-image: url("./assets/illustrations/curves1.svg");
+    transform: translateY(-1px);
   }
   &.end {
     background-image: url("./assets/illustrations/curves2.svg");
-    transform: rotate(180deg);
+    transform: translateY(1px) rotate(180deg);
   }
 }

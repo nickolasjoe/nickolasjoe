@@ -2,10 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
     <title>Hi, I'm Nickolas Joe 👋</title>
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Nickolas Joe" />
+    <meta name="apple-mobile-web-app-title" content="Nickolas Joe" />
+    <meta name="application-name" content="Nickolas Joe" />
+    <meta name="theme-color" content="#087ea4" />
+
+    <!-- Links & Scripts -->
     <link rel="stylesheet" href="style.css?ver=1.0.1" />
-    <script defer src="app.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
@@ -24,7 +35,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       />
     </noscript>
+    <script type="text/javascript">
+      document.documentElement.classList.add("js");
+    </script>
+    <script defer src="app.js" type="module"></script>
   </head>
+
   <body>
     <main class="hero" id="hero">
       <div class="container">
@@ -131,7 +147,7 @@
               fill="#99ccda"
             ></path>
           </svg>
-          I'm Nickolas
+          I'm Nickolas Joe
         </p>
 
         <h1 class="headline">React<br />Developer</h1>
