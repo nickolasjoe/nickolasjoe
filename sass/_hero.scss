@@ -6,6 +6,26 @@
   color: var(--white-1);
   position: relative;
 
+  .tigercodes {
+    position: absolute;
+    top: 40px;
+    opacity: 0.8;
+    transition: 0.3s ease-in;
+    transition-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+
+    path {
+      transition: 0.3s;
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-12px);
+      path {
+        fill: var(--white-1);
+      }
+    }
+  }
+
   .container {
     padding-inline: 16px;
     position: relative;
@@ -55,20 +75,35 @@
 
   .about-me {
     font-size: 24px;
+    line-height: 1.2;
     text-align: right;
-    margin-top: 16px;
+    margin-top: 8px;
     @include m(1400) {
       font-size: 18px;
-      margin-top: 8px;
     }
     @include m(720) {
       font-size: 14px;
       margin-top: 4px;
     }
     @include m(550) {
-      line-height: 1.2;
+      text-align: center;
       max-width: 256px;
-      margin-left: auto;
+      margin-inline: auto;
+    }
+
+    a {
+      display: inline-block;
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background: var(--white-1);
+        transition: 0.5s ease-out;
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 }

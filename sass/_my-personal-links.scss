@@ -1,9 +1,9 @@
 .my-personal-links {
   display: flex;
-  gap: 48px;
+  gap: 40px;
   position: absolute;
-  top: 92px;
-  right: 198px;
+  top: 128px;
+  right: 321px;
   @include m(1400) {
     gap: 20px;
     top: 74px;
