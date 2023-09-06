@@ -1,40 +1,65 @@
 export default class Animate {
   constructor(elements) {
-    this.elements = document.querySelectorAll(elements);
+    this.elements = [...document.querySelectorAll(elements)];
+    this.handleVisibility = this.handleVisibility.bind(this);
+    this.handleObserver = this.handleObserver.bind(this);
+    this.options = { threshold: 0.5 };
+    this.observer = new IntersectionObserver(this.handleObserver, this.options);
+    this.activeClass = "active";
   }
 
-  animateElements() {
-    this.elements.forEach((element) => {
-      const time = Number(element.getAttribute("data-animate"));
-      if (!Number.isNaN(time)) {
-        setTimeout(() => {
-          element.classList.add("animate");
-        }, time);
+  filterElements() {
+    this.sectionElements = this.elements.filter(
+      (el) => el.getAttribute("data-animate") === "section",
+    );
+
+    this.headingElement = this.elements
+      .filter((el) => el.getAttribute("data-animate") === "heading")
+      .shift();
+  }
+
+  handleObserver(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(this.activeClass);
+        this.observer.unobserve(entry.target);
       }
     });
+  }
+
+  observeEachSection() {
+    this.sectionElements.forEach((section) => {
+      this.observer.observe(section);
+    });
+  }
+
+  animateHeadingElement() {
+    setTimeout(() => {
+      this.headingElement.classList.add(this.activeClass);
+    }, 500);
   }
 
   handleVisibility() {
     if (typeof document.visibilityState !== "undefined") {
       if (document.visibilityState === "visible") {
-        this.animateElements();
+        this.animateHeadingElement();
       }
     } else {
-      this.animateElements();
+      this.animateHeadingElement();
     }
   }
 
   addEvent() {
-    document.addEventListener("visibilitychange", () =>
-      this.handleVisibility(),
-    );
+    document.addEventListener("visibilitychange", this.handleVisibility);
   }
 
   init() {
-    if (this.elements.length) {
+    if (this.elements.length) this.filterElements();
+    if (this.headingElement) {
       this.handleVisibility();
       this.addEvent();
     }
+    if (this.sectionElements.length) this.observeEachSection();
     return this;
   }
 }
