@@ -3,6 +3,7 @@ export default class CopyToClipboard {
     this.elementContainer = document.querySelector(elementContainer);
     if (this.elementContainer)
       this.element = this.elementContainer.querySelector(element);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -22,12 +23,12 @@ export default class CopyToClipboard {
     }, 1200);
   }
 
-  addClickEvent() {
-    this.elementContainer.addEventListener("click", () => this.handleClick());
+  addEvent() {
+    this.elementContainer.addEventListener("click", this.handleClick);
   }
 
   init() {
-    if (this.elementContainer) this.addClickEvent();
+    if (this.elementContainer) this.addEvent();
     return this;
   }
 }

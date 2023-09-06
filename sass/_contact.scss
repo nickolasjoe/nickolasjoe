@@ -3,6 +3,10 @@
   background-color: var(--purple);
   min-height: 50vh;
   overflow-y: hidden;
+  @include m(720) {
+    display: grid;
+    place-items: center;
+  }
 
   p {
     line-height: 1.5;

@@ -2,10 +2,11 @@
 @import "reset";
 @import "variables-and-mixins";
 @import "global";
+@import "animations";
 
 // Website
+@import "javascript";
 @import "hero";
-@import "animations";
 @import "my-personal-links";
 @import "portfolio";
 @import "contact";
