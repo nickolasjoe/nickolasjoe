@@ -15,9 +15,7 @@ a,
 strong,
 ul,
 li,
-header,
 footer,
-nav,
 section {
   margin: 0;
   padding: 0;
@@ -32,21 +30,10 @@ a {
   text-decoration: none;
 }
 
-em {
-  font-style: italic;
-}
-
 strong {
   font-weight: 700;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-}
-
-ol,
 ul {
   list-style: none;
 }

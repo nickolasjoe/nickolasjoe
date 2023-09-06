@@ -5,7 +5,6 @@ html {
 
 body {
   background-color: var(--white-2);
-  overflow-x: hidden;
 }
 
 body,
@@ -25,6 +24,9 @@ svg {
   color: var(--black-1);
   text-align: center;
   text-transform: uppercase;
+  @include m(720) {
+    font-size: 36px;
+  }
 }
 
 .spacer {
@@ -35,7 +37,7 @@ svg {
   background-size: cover;
   &.start {
     background-image: url("./assets/illustrations/curves1.svg");
-    transform: translateY(-1px);
+    border-top: 1px solid var(--blue-2);
   }
   &.end {
     background-image: url("./assets/illustrations/curves2.svg");
