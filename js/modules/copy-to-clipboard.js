@@ -1,15 +1,14 @@
 export default class CopyToClipboard {
-  constructor(elementContainer, element) {
-    this.elementContainer = document.querySelector(elementContainer);
-    if (this.elementContainer)
-      this.element = this.elementContainer.querySelector(element);
+  constructor(container, element) {
+    this.container = document.querySelector(container);
+    if (this.container) this.element = this.container.querySelector(element);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     const selection = window.getSelection();
     const range = document.createRange();
-    range.selectNodeContents(this.elementContainer);
+    range.selectNodeContents(this.container);
     selection.removeAllRanges();
     selection.addRange(range);
 
@@ -24,11 +23,11 @@ export default class CopyToClipboard {
   }
 
   addEvent() {
-    this.elementContainer.addEventListener("click", this.handleClick);
+    this.container.addEventListener("click", this.handleClick);
   }
 
   init() {
-    if (this.elementContainer) this.addEvent();
+    if (this.container) this.addEvent();
     return this;
   }
 }

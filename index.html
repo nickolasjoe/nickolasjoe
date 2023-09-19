@@ -48,7 +48,7 @@
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
     <!-- Links & Scripts -->
-    <link rel="stylesheet" href="style.css?ver=1.0.7" />
+    <link rel="stylesheet" href="style.css?ver=1.0.8" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
@@ -70,7 +70,7 @@
     <script type="text/javascript">
       document.documentElement.classList.add("js");
     </script>
-    <script src="app.js?ver=1.0.2" type="module" defer></script>
+    <script src="app.js?ver=1.0.3" type="module" defer></script>
   </head>
 
   <body>
@@ -299,7 +299,7 @@
           at:
         </p>
 
-        <div class="email">
+        <div class="email-container" data-clipboard="email-container">
           <div class="icon">
             <svg
               width="16"
@@ -315,7 +315,11 @@
             </svg>
           </div>
 
-          <div class="email-address" data-status="Click to Copy!">
+          <div
+            class="email-address"
+            data-status="Click to Copy!"
+            data-clipboard="email-address"
+          >
             nickolasjoe98@gmail.com
           </div>
         </div>

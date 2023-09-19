@@ -4,5 +4,8 @@ import CopyToClipboard from "./js/modules/copy-to-clipboard.js";
 const animate = new Animate("[data-animate]");
 animate.init();
 
-const copyToClipboard = new CopyToClipboard(".email", ".email-address");
+const copyToClipboard = new CopyToClipboard(
+  ".email-container",
+  ".email-address",
+);
 copyToClipboard.init();
