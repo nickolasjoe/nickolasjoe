@@ -1,6 +1,13 @@
 export default class Animate {
-  constructor(elements) {
-    this.elements = [...document.querySelectorAll(elements)];
+  elements: HTMLElement[];
+  options: IntersectionObserverInit;
+  observer: IntersectionObserver;
+  activeClass: string;
+  sectionElements: HTMLElement[] | undefined;
+  headingElement: HTMLElement | undefined;
+
+  constructor(elements: string) {
+    this.elements = [...document.querySelectorAll<HTMLElement>(elements)];
     this.handleVisibility = this.handleVisibility.bind(this);
     this.handleObserver = this.handleObserver.bind(this);
     this.options = { threshold: 0.5 };
@@ -18,7 +25,7 @@ export default class Animate {
       .shift();
   }
 
-  handleObserver(entries) {
+  handleObserver(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add(this.activeClass);
@@ -28,14 +35,16 @@ export default class Animate {
   }
 
   observeEachSection() {
-    this.sectionElements.forEach((section) => {
-      this.observer.observe(section);
-    });
+    if (this.sectionElements)
+      this.sectionElements.forEach((section) => {
+        this.observer.observe(section);
+      });
   }
 
   animateHeadingElement() {
     setTimeout(() => {
-      this.headingElement.classList.add(this.activeClass);
+      if (this.headingElement)
+        this.headingElement.classList.add(this.activeClass);
     }, 500);
   }
 
@@ -59,7 +68,8 @@ export default class Animate {
       this.handleVisibility();
       this.addEvent();
     }
-    if (this.sectionElements.length) this.observeEachSection();
+    if (this.sectionElements && this.sectionElements.length)
+      this.observeEachSection();
     return this;
   }
 }

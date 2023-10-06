@@ -5,7 +5,7 @@ const browserSync = require("browser-sync").create();
 
 function buildStyles() {
   return gulp
-    .src("sass/*.scss")
+    .src("public/sass/*.scss")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(concat("style.css"))
     .pipe(gulp.dest("./"))
@@ -14,7 +14,7 @@ function buildStyles() {
 exports.buildStyles = buildStyles;
 
 function injectScripts() {
-  return gulp.src("app.js").pipe(browserSync.stream());
+  return gulp.src("dist/app.js").pipe(browserSync.stream());
 }
 exports.injectScripts = injectScripts;
 
@@ -28,8 +28,8 @@ function initBrowserSync() {
 exports.initBrowserSync = initBrowserSync;
 
 function watch() {
-  gulp.watch("sass/*.scss", buildStyles);
-  gulp.watch("app.js", injectScripts);
+  gulp.watch("public/sass/*.scss", buildStyles);
+  gulp.watch("dist/app.js", injectScripts);
   gulp.watch("*.html").on("change", browserSync.reload);
 }
 exports.watch = watch;
