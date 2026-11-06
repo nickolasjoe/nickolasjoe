@@ -4,4 +4,5 @@ const animate = new Animate("[data-animate]");
 animate.init();
 const copyToClipboard = new CopyToClipboard(".email-container", ".email-address");
 copyToClipboard.init();
+
 //# sourceMappingURL=app.js.map

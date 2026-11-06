@@ -1,16 +1,19 @@
 {
   "name": "nickolasjoe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "gulpfile.js",
   "license": "ISC",
   "browserslist": [
     "last 2 versions"
   ],
   "devDependencies": {
-    "browser-sync": "^2.29.3",
-    "gulp": "^4.0.2",
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.66.1"
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "sass": "^1.108.0",
+    "typescript": "^6.0.3"
   }
 }

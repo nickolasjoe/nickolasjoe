@@ -7,16 +7,14 @@ export default class CopyToClipboard {
             this.element = this.container.querySelector(element);
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick() {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        if (this.container)
-            range.selectNodeContents(this.container);
-        if (selection) {
-            selection.removeAllRanges();
-            selection.addRange(range);
-            document.execCommand("copy");
-            selection.removeAllRanges();
+    async handleClick() {
+        if (!this.container)
+            return;
+        try {
+            await navigator.clipboard.writeText(this.container.innerText);
+        }
+        catch {
+            return;
         }
         if (this.element)
             this.element.dataset.status = "Copied!";
@@ -34,4 +32,5 @@ export default class CopyToClipboard {
         return this;
     }
 }
+
 //# sourceMappingURL=copy-to-clipboard.js.map

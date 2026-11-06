@@ -1,13 +1,13 @@
 // General
-@import "reset";
-@import "variables-and-mixins";
-@import "global";
-@import "animations";
+@use "reset";
+@use "variables-and-mixins";
+@use "global";
+@use "animations";
 
 // Website
-@import "javascript";
-@import "hero";
-@import "my-personal-links";
-@import "portfolio";
-@import "contact";
-@import "footer";
+@use "javascript";
+@use "hero";
+@use "my-personal-links";
+@use "portfolio";
+@use "contact";
+@use "footer";

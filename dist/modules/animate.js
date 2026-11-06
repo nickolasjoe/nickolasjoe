@@ -64,4 +64,5 @@ export default class Animate {
         return this;
     }
 }
+
 //# sourceMappingURL=animate.js.map
